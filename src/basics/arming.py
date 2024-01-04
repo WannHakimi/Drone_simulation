@@ -116,4 +116,4 @@ if __name__ == '__main__':
 				landService = rospy.ServiceProxy('/mavros/cmd/land', CommandTOL)
 				isLanding = landService(altitude = 0, latitude = 0, longitude = 0, min_pitch = 0, yaw = 0)
 			except rospy.ServiceException, e:
-				print "service land call failed"
+				print ("service land call failed")
