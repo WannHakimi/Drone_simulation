@@ -86,7 +86,9 @@ if __name__ == '__main__':
 		rate.sleep()
     
 	# OFF board mode
-	rospy.wait_for_service('/mavros/set_mode')  # block until service is available 
+	rospy.wait_for_service('/mavros/set_mode') 
+	
+	# block until service is available 
 	mode_srv = rospy.ServiceProxy("/mavros/set_mode", SetMode)
 	response = mode_srv.call(custom_mode="OFFBOARD")
 	print("Offboard mode ", response)
@@ -115,5 +117,5 @@ if __name__ == '__main__':
 			try:
 				landService = rospy.ServiceProxy('/mavros/cmd/land', CommandTOL)
 				isLanding = landService(altitude = 0, latitude = 0, longitude = 0, min_pitch = 0, yaw = 0)
-			except rospy.ServiceException, e:
-				print ("service land call failed")
+			except rospy.ServiceException as e:
+				print("service land call failed")

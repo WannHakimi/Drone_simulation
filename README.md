@@ -3,6 +3,20 @@ Drone simulation using ROS, Gazebo and PX4
 
 Drone landing on an AR marker
 
+## Installing ArVar ROS Noetic 
+
+You can build this repo from source.
+
+In your workspace:(catkin_ws folder)
+
+$ git clone https://github.com/machinekoder/ar_track_alvar.git -b noetic-devel
+
+Build with colcon
+
+$ colcon build
+
+you can also just use catkin_make
+
 ![drone_landing](drone_landing.gif)
 
 ## Using this repo
@@ -13,13 +27,13 @@ Don't forget to set the environment variables
 
 ### Launch the simulation world
 
-`roslaunch basics AR_detect.launch`
+`roslaunch shogime shogime.launch`
 
 ### Run the node
 
-`rosrun basics arming.py`
+`rosrun shogime arucoland.py`
 
-Make sure this file is executable `chmod +x arming.py` 
+Make sure this file is executable `chmod +x arucoland.py` 
 
 ## Environment variables
 
