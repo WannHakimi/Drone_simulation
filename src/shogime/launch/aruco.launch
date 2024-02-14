@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <launch>
     <arg name="vehicle" default="iris"/>
-    <arg name="sdf" default="$(find basics)/models/iris_fpv_cam/iris_fpv_cam.sdf"/>
-    <arg name="world" default="$(find basics)/worlds/ar.world"/>
+    <arg name="sdf" default="$(find shogime)/models/iris_fpv_cam/iris_fpv_cam.sdf"/>
+    <arg name="world" default="$(find shogime)/worlds/ar.world"/>
 
     <include file="$(find px4)/launch/mavros_posix_sitl.launch">
         <arg name="respawn_gazebo" value="true"/>
